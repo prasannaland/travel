@@ -1,0 +1,382 @@
+# Static HTML Version of Your Landing Page
+
+Save this as `index.html` and upload it directly to GitHub Pages.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LankaTrip India</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: #ffffff;
+      color: #0f172a;
+      line-height: 1.6;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(15, 23, 42, 0.95);
+      padding: 16px 40px;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      color: white;
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    nav .logo span {
+      color: #f97316;
+    }
+
+    .hero {
+      height: 100vh;
+      background: linear-gradient(135deg, #0c4a6e 0%, #065f46 35%, #1e3a5f 70%, #0f172a 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(249,115,22,0.2);
+      border: 1px solid rgba(249,115,22,0.4);
+      color: #fdba74;
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 60px;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(90deg, #f97316, #fbbf24);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #f97316, #ef4444);
+      color: white;
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.4);
+      color: white;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .section {
+      padding: 80px 24px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: #64748b;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #64748b;
+      margin-bottom: 16px;
+    }
+
+    .price {
+      font-size: 22px;
+      font-weight: 800;
+      color: #0ea5e9;
+      margin-bottom: 16px;
+    }
+
+    .activities {
+      background: #f8fafc;
+    }
+
+    .activity-card {
+      background: white;
+      padding: 24px;
+      border-radius: 18px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    }
+
+    .activity-card .icon {
+      font-size: 48px;
+      margin-bottom: 14px;
+    }
+
+    .testimonials {
+      background: linear-gradient(135deg, #0c4a6e, #065f46);
+      color: white;
+    }
+
+    .testimonial-card {
+      background: rgba(255,255,255,0.08);
+      padding: 24px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    .testimonial-card p {
+      margin-bottom: 18px;
+      color: rgba(255,255,255,0.85);
+    }
+
+    footer {
+      background: #0f172a;
+      color: rgba(255,255,255,0.8);
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    @media(max-width:768px) {
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">🌴 LankaTrip <span>India</span></div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="badge">🇮🇳 → 🇱🇰 Just 1.5 Hours from Chennai</div>
+
+      <h1>
+        Explore Sri Lanka from India —
+        <span>Budget Friendly Paradise</span>
+      </h1>
+
+      <p>
+        Complete travel guides, hotel recommendations, local expenses,
+        and must-visit attractions tailored for Indian travelers.
+      </p>
+
+      <div class="buttons">
+        <a href="#destinations" class="btn btn-primary">🗺 Explore Destinations</a>
+        <a href="#activities" class="btn btn-secondary">📋 Plan Your Trip</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="destinations">
+    <div class="section-title">
+      <h2>Top Destinations in Sri Lanka</h2>
+      <p>
+        Discover beaches, mountains, tea plantations, and cultural cities.
+      </p>
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1583417267826-aebc4d1542e1?w=800&q=80" alt="Colombo">
+        <div class="card-content">
+          <h3>Colombo</h3>
+          <p>Sri Lanka's vibrant capital city with beaches, food, and nightlife.</p>
+          <div class="price">₹4,200/day</div>
+          <a href="#" class="btn btn-primary">View Guide</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1588416499018-d8c621e7d2c2?w=800&q=80" alt="Kandy">
+        <div class="card-content">
+          <h3>Kandy</h3>
+          <p>Cultural heart of Sri Lanka with temples and mountain scenery.</p>
+          <div class="price">₹3,800/day</div>
+          <a href="#" class="btn btn-primary">View Guide</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1625126797580-dbfa0e3cfec1?w=800&q=80" alt="Ella">
+        <div class="card-content">
+          <h3>Ella</h3>
+          <p>Famous for scenic train rides and beautiful mountain views.</p>
+          <div class="price">₹3,200/day</div>
+          <a href="#" class="btn btn-primary">View Guide</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section activities" id="activities">
+    <div class="section-title">
+      <h2>Things To Do</h2>
+      <p>Best experiences for Indian travelers.</p>
+    </div>
+
+    <div class="cards">
+
+      <div class="activity-card">
+        <div class="icon">🚂</div>
+        <h3>Scenic Train Rides</h3>
+        <p>Kandy to Ella is considered one of the most beautiful train rides in the world.</p>
+      </div>
+
+      <div class="activity-card">
+        <div class="icon">🏄</div>
+        <h3>Beach Surfing</h3>
+        <p>Surf at Weligama and enjoy the tropical beaches.</p>
+      </div>
+
+      <div class="activity-card">
+        <div class="icon">🐘</div>
+        <h3>Wildlife Safari</h3>
+        <p>See elephants and leopards in Yala National Park.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section testimonials">
+    <div class="section-title">
+      <h2 style="color:white;">Loved by Indian Travelers</h2>
+      <p style="color:rgba(255,255,255,0.7);">
+        Real experiences from Indian tourists.
+      </p>
+    </div>
+
+    <div class="cards">
+
+      <div class="testimonial-card">
+        <p>
+          "Sri Lanka felt affordable and beautiful. The train journey to Ella was magical!"
+        </p>
+        <strong>— Priya Sharma, Mumbai</strong>
+      </div>
+
+      <div class="testimonial-card">
+        <p>
+          "Amazing beaches and very friendly people. Perfect budget trip from India."
+        </p>
+        <strong>— Rahul Gupta, Delhi</strong>
+      </div>
+
+      <div class="testimonial-card">
+        <p>
+          "Mirissa whale watching was unforgettable. Highly recommended for couples."
+        </p>
+        <strong>— Sneha & Vikram, Bangalore</strong>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <h3>🌴 LankaTrip India</h3>
+    <p>
+      Your trusted guide for Sri Lanka travel.
+    </p>
+    <br>
+    <p>
+      © 2025 LankaTrip India · Made with ❤️ for Indian Travelers
+    </p>
+  </footer>
+
+</body>
+</html>
